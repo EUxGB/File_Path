@@ -16,25 +16,19 @@ n
 
  */
 
-import java.io.*;
-import java.util.Arrays;
-import java.util.stream.Stream;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Stepik_StreamByte {
-    public static void main(String[] args) {
-        byte [] bytes = {0x33, 0x45, 0x01};
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bytes);
-
-
-        int tmp;
-        while ((tmp = byteArrayInputStream.read()) !=-1) {
-            System.out.print(tmp+"  ");
-            int i = Integer.rotateLeft(tmp,1);
-            System.out.println(i);
-        }
-
-        }
+    public static void main(String[] args) throws IOException {
+        byte[] bytes = {0x33, 0x45, 0x01}; //{1,2,3,4,5,6,7,8};
+        InputStream input = new ByteArrayInputStream(bytes);
+        ChekSum ch = new ChekSum();
+        ch.checkSumOfStream(input);
 
     }
+
+}
 
 
