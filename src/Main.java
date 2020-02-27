@@ -25,31 +25,28 @@
 
  */
 
-import java.io.*;
-import java.util.Arrays;
+
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        byte [] bytes = {65,13,10,10,13,15,25,13,13,13,10,10,10,65,13,10,10,10,13};
-        InputStream inputStream = new ByteArrayInputStream(bytes);
-        OutputStream outputStream = new ByteArrayOutputStream();
-        //System.setIn(stream);
+        int prev, next = 0;
+        if ((prev = System.in.read()) != -1) {
+            do {
+                next = System.in.read();
+                if (prev != 13 || next != 10) {
+                    System.out.write(prev);
 
-        int prev ;
-        int next = 0;
-        prev = inputStream.read();
-        while ((next = inputStream.read()) != -1) {
-            if (prev != 13 || next  != 10) {
-                outputStream.write(prev);
-                System.out.print(" "+ prev);
+                }
+                prev = next;
+
             }
-
-            prev = next;
+            while (next != -1);
 
         }
-
         System.out.flush();
-    }
 
     }
+
+}
 
