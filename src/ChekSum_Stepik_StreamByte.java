@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.InputStream;
 
-public class ChekSum {
+public class ChekSum_Stepik_StreamByte {
 
     public static int checkSumOfStream(InputStream inputStream) throws IOException {
         int arri;

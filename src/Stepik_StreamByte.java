@@ -24,7 +24,7 @@ public class Stepik_StreamByte {
     public static void main(String[] args) throws IOException {
         byte[] bytes = {0x33, 0x45, 0x01}; //{1,2,3,4,5,6,7,8};
         InputStream input = new ByteArrayInputStream(bytes);
-        ChekSum ch = new ChekSum();
+        ChekSum_Stepik_StreamByte ch = new ChekSum_Stepik_StreamByte();
         ch.checkSumOfStream(input);
 
     }
